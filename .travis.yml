@@ -15,6 +15,7 @@ install:
 - pip install ansible-lint
 - pip install docker
 - pip install molecule==1.23.0
+- pip install testinfra
 
 script:
 - cd ../ && mv ansible-role-consul-cli kostyrev.consul-cli && cd kostyrev.consul-cli
