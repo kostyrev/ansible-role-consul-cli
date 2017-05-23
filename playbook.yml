@@ -1,0 +1,16 @@
+---
+# Add this snippet to the top of your playbook.
+# It will install python2 if missing (but checks first so no expensive repeated apt updates)
+
+- hosts: all
+  gather_facts: no
+  tasks:
+    - name: install python 2
+      raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+      changed_when: no
+
+- hosts: all
+  vars:
+    consul_cli_validate_certs: "{{ false if ansible_virtualization_type == 'docker' else true }}"
+  roles:
+    - kostyrev.consul-cli

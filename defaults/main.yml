@@ -1,0 +1,9 @@
+---
+# defaults file for kostyrev.consul-cli
+consul_cli_version: 0.3.1
+consul_cli_tar: "consul-cli_{{ consul_cli_version }}_linux_amd64.tar.gz"
+consul_cli_url: "https://github.com/mantl/consul-cli/releases/download/v{{ consul_cli_version }}/{{ consul_cli_tar }}"
+consul_cli_download_dir: /root
+consul_cli_install_dir: /opt           # dir to extract vault binary
+consul_cli_bin_dir: /usr/local/bin     # dir to extract vault binary
+consul_cli_validate_certs: true

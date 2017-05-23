@@ -1,0 +1,19 @@
+---
+galaxy_info:
+  author: Aleksandr Kostyrev
+  description: Ansible role for installing and configuring Mantl consul-cli
+  license: BSD
+  min_ansible_version: 2.1
+  platforms:
+  - name: Fedora
+    versions:
+    - all
+  - name: Ubuntu
+    versions:
+    - all
+  - name: Debian
+    versions:
+    - all
+  categories:
+  - cloud
+dependencies: []

@@ -1,0 +1,22 @@
+---
+# tasks file for kostyrev.consul-cli
+- name: download consul-cli to {{ consul_cli_download_dir }}
+  get_url:
+    url: "{{ consul_cli_url }}"
+    dest: "{{ consul_cli_download_dir }}/{{ consul_cli_tar }}"
+    validate_certs: "{{ consul_cli_validate_certs }}"
+
+- name: Unzip consul-cli to {{ consul_cli_install_dir }}
+  unarchive:
+    src: "{{ consul_cli_download_dir }}/{{ consul_cli_tar }}"
+    dest: "{{ consul_cli_install_dir }}"
+    owner: root
+    group: root
+    mode: '0750'
+    copy: no
+
+- name: symlink consul-cli binary
+  file:
+    state: link
+    src: "{{ consul_cli_install_dir }}/consul-cli_{{ consul_cli_version }}_linux_amd64/consul-cli"
+    dest: "{{ consul_cli_bin_dir }}/consul-cli"

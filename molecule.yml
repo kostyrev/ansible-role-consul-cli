@@ -1,0 +1,19 @@
+---
+dependency:
+  name: galaxy
+
+driver:
+  name: docker
+
+docker:
+  containers:
+    - name: consul-cli-ubuntu
+      image: ubuntu
+      image_version: 16.04
+
+    - name: consul-cli-centos6
+      image: centos
+      image_version: 6.8
+
+verifier:
+  name: testinfra
