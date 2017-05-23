@@ -11,11 +11,11 @@ before_install:
 - sudo apt-get install -o Dpkg::Options::="--force-confold" --force-yes -y docker-engine
 
 install:
+- pip install testinfra
 - pip install ansible==2.3.0.0
 - pip install ansible-lint
 - pip install docker
 - pip install molecule==1.23.0
-- pip install testinfra
 
 script:
 - cd ../ && mv ansible-role-consul-cli kostyrev.consul-cli && cd kostyrev.consul-cli
