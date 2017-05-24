@@ -5,6 +5,15 @@ dependency:
 driver:
   name: docker
 
+molecule:
+  test:
+    sequence:
+      - destroy
+      - syntax
+      - create
+      - converge
+      - idempotence
+
 docker:
   containers:
     - name: consul-cli-ubuntu
