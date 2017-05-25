@@ -11,4 +11,4 @@ lint:
 	@pre-commit install
 
 install:
-	ansible-playbook -i "localhost," playbook.yml --diff -c local
+	ansible-playbook -i "localhost," playbook.yml --diff -c local --ask-become-pass
