@@ -12,7 +12,7 @@
     dest: "{{ consul_cli_install_dir }}"
     owner: root
     group: root
-    mode: '0750'
+    mode: "{{ consul_cli_dir_mode }}"
     copy: no
 
 - name: symlink consul-cli binary
