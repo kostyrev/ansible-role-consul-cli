@@ -33,6 +33,14 @@ Example Playbook
     - kostyrev.consul-cli
 ```
 
+Install From Github
+-------------------
+
+```
+git clone https://github.com/kostyrev/ansible-role-consul-cli.git kostyrev.consul-cli
+cd kostyrev.consul-cli && make install
+```
+
 License
 -------
 
