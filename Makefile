@@ -6,6 +6,9 @@ all: setup
 
 setup: lint
 
+roles:
+	@ansible-galaxy install --ignore-certs -r Ansiblefile.yml 1>/dev/null
+
 lint:
 	@pip install --quiet --user -r requirements.txt
 	@pre-commit install
